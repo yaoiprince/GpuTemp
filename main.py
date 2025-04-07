@@ -5,7 +5,7 @@ from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase
 
 # Import actions
-from .actions.SimpleAction.GpuTemp import GPU
+from .actions.SimpleAction.GpuTemp import GpuTemp
 
 class PluginTemplate(PluginBase):
     def __init__(self):
@@ -14,7 +14,7 @@ class PluginTemplate(PluginBase):
         ## Register actions
         self.simple_action_holder = ActionHolder(
             plugin_base = self,
-            action_base = GPU,
+            action_base = GpuTemp,
             action_id = "dev_yaoiprince_GpuTemp::GpuTemp", # Change this to your own plugin id
             action_name = "Gpu Temperature",
         )
