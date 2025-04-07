@@ -42,7 +42,7 @@ class GpuTemp(ActionBase):
         temperature = psutil.sensors_temperatures()
         # intel cpu
         if "nvme-Composite" in temperature:
-            temperature = temperature.get("nvme-Composite")[0].current
+            temperature = temperature.get("nvme-Composite").current
         else:
             self.set_center_label(text="N/A", font_size=18)
             return
