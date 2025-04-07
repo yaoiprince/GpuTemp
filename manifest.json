@@ -1,6 +1,9 @@
 {
-    "version": "",
-    "thumbnail": "",
-    "id": "",
-    "name": ""
+  "version": "1.0",
+  "thumbnail": "",
+  "id": "com_yaoiprince_GpuTemp",
+  "name": "GPU", 
+  "app-version": "1.4.11-beta",
+  "author": "yaoiprince",
+  "github": "https://github.com/yaoiprince/GpuTemp"
 }
