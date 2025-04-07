@@ -40,9 +40,8 @@ class Gpu(ActionBase):
 
     def update(self):
         temperature = psutil.sensors_temperatures()
-        # intel cpu
-        if "nvme-Composite" in temperature:
-            temperature = temperature.get("nvme-Composite").current
+        if "nvme" in temperature:
+            temperature = temperature.get("nvme")[0].current
         else:
             self.set_center_label(text="N/A", font_size=18)
             return
