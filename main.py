@@ -5,7 +5,7 @@ from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase
 
 # Import actions from your own module
-import .actions.SimpleAction.NvidiaGpu as gpu_action
+from .actions.SimpleAction.NvidiaGpu import GpuTemp as gpu_action
 
 class PluginTemplate(PluginBase):
     def __init__(self):
