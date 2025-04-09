@@ -7,6 +7,7 @@ from src.backend.PluginManager.PluginBase import PluginBase
 # Import python modules
 import os
 import psutil
+import nvidia_smi
 
 # Import gtk modules
 import gi
@@ -40,8 +41,8 @@ class Gpu(ActionBase):
 
     def update(self):
         temperature = psutil.sensors_temperatures()
-        if "pci" in temperature:
-            temperature = temperature.get("pci").current
+        if "nvme" in temperature:
+            temperature = temperature.get("nvme")[0].current
         else:
             self.set_center_label(text="N/A", font_size=18)
             return
