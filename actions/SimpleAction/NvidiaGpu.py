@@ -34,12 +34,13 @@ if __name__ == "__main__":
     # Print the result (in Celsius)
     print(f"{gpu_temp.get_temperature_value()}°C")
 
-class GpuTemp:(ActionBase):
+class GpuTemp(ActionBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.gpu_temp = TemperatureSensor()
 
     def on_ready(self) -> None:
-        print(f"{gpu_temp.get_temperature_value()}°C")
+        print(f"{self.gpu_temp.get_temperature_value()}°C")
 
     def on_key_down(self) -> None:
         print("Key down") 
