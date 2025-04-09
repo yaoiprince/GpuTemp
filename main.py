@@ -5,15 +5,11 @@ from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase
 
 # import actions
-from .actions.SimpleAction.GpuTemp import Gpu
+from .actions.SimpleAction.GpuTemp import GpuTemp
 
 # import pyNVML
 import nvidia_smi
 
-nvidia_smi.nvmlInit()
-handle = nvidia_smi.nvmlDeviceGetHandleByIndex(0)
-
-nvidia-smi -q –d CLOCK
 
 class PluginTemplate(PluginBase):
     def __init__(self):
