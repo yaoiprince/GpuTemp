@@ -14,7 +14,7 @@ class PluginTemplate(PluginBase):
         ## register actions
         self.gpu_action = ActionHolder(
             plugin_base = self,
-            action_base = Gpu,
+            action_base = GpuTemp,
             action_id = "dev_yaoiprince_GpuTemp::GpuTemp", # change this to your own plugin id
             action_name = "Gpu Temperature",
         )
