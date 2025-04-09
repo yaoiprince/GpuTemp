@@ -5,6 +5,7 @@ from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase 
 
 # Import python modules
+import nvidia-smi *
 import subprocess
 
 # Import gtk modules - used for the config rows
@@ -30,9 +31,7 @@ class TemperatureSensor:
 if __name__ == "__main__":
     # Create an instance of the GPU Temperature class to get your GPU temperature
     gpu_temp = GPU Temperature()
-    
-    # Print the result (in Celsius)
-    print(f"{gpu_temp.get_temperature_value()}°C")
+
 
 class GpuTemp(ActionBase):
     def __init__(self, *args, **kwargs):
