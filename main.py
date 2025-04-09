@@ -7,10 +7,6 @@ from src.backend.PluginManager.PluginBase import PluginBase
 # import actions
 from .actions.SimpleAction.GpuTemp import GpuTemp
 
-# import pyNVML
-import nvidia_smi
-
-
 class PluginTemplate(PluginBase):
     def __init__(self):
         super().__init__()
