@@ -5,7 +5,7 @@ from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase
 
 # import actions
-from .actions.SimpleAction.GpuTemp import GpuTemp
+from .actions.SimpleAction.NvidiaGpu import GpuTemp
 
 class PluginTemplate(PluginBase):
     def __init__(self):
