@@ -21,10 +21,10 @@ class Temp(ActionBase):
     	GPUs = GPUtil.getGPUs()
         
         if not GPUs:  # Check if any GPU is available
-            print("Temp not found")
+            print("No temps found")
         else:
             for GPU in GPUs:
-                print(f"Temp: {GPU.temperature}"))
+                print(f"Temp: {GPU.temperature}")
 
     def on_key_down(self) -> None:
         print("Key down") 
