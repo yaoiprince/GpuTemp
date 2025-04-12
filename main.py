@@ -4,23 +4,23 @@ from src.backend.DeckManagement.DeckController import DeckController
 from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase
 
-# Import actions from your own module
+# Import actions
 from .actions.SimpleAction.temperature import Temp
 
 class PluginTemplate(PluginBase):
     def __init__(self):
         super().__init__()
 
-        ## register actions
-        self.gpu_action = ActionHolder(
+        ## Register actions
+        self.Temperature = ActionHolder(
             plugin_base = self,
             action_base = Temp,
-            action_id = "dev_yaoiprince_GpuTemp::temperature",  # change this to your own plugin id
+            action_id = "dev_yaoiprince_GpuTemp::temperature", # Change this to your own plugin id
             action_name = "GPU Temperature",
         )
-        self.add_action_holder(self.gpu_action)
+        self.add_action_holder(self.Temperature)
 
-        # register plugin
+        # Register plugin
         self.register(
             plugin_name = "GpuTemp",
             github_repo = "https://github.com/yaoiprince/GpuTemp",
