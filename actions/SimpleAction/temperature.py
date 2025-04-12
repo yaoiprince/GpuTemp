@@ -6,6 +6,9 @@ from src.backend.PluginManager.PluginBase import PluginBase
 
 # Import python modules
 import GPUtil
+import os
+import sys
+import platform
 
 # Import gtk modules - used for the config rows
 import gi
