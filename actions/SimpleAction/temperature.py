@@ -6,8 +6,7 @@ from src.backend.PluginManager.PluginBase import PluginBase
 
 # Import python modules
 import subprocess
-import nvidia_smi
-import re
+from pynvml_utils import nvidia_smi
 ﻿﻿﻿﻿
 # Import gtk modules - used for the config rows
 import gi
