@@ -23,7 +23,7 @@ class Temp(ActionBase):
     def on_ready(self) -> None:
     	GPUs = GPUtil.getGPUs()
         
-        if not GPUs:  # Check if any GPU is available
+        if not GPUs: # Check if any GPU is available
             print("No temps found")
         else:
             for GPU in GPUs:
