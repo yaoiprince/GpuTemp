@@ -4,6 +4,7 @@ class Backend(BackendBase):
     def __init__(self):
         super().__init__()
         
+        nvsmi = nvidia_smi.getInstance()
         nvidia_smi.nvmlInit()
         handle = nvidia_smi.nvmlDeviceGetHandleByIndex(0)
         
