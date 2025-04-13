@@ -12,13 +12,17 @@ import platform
 
 # Import gtk modules - used for the config rows
 import gi
-gi.require_version("Gtk", "4.0") 
-gi.require_version("Adw", "1") 
-from gi.repository import Gtk, Adw 
+gi.require_version("Gtk", "4.0")
+gi.require_version("Adw", "1")
+from gi.repository import Gtk, Adw
 
 class Temp(ActionBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+	backend_path = os.path.join(self.plugin_base.PATH, "actions", "counter", "backend", "backend.py")
+
+        self.launch_backend(backend_path=backend_path, open_in_terminal=True)
 
     def on_ready(self) -> None:
     	GPUs = GPUtil.getGPUs()
@@ -30,7 +34,7 @@ class Temp(ActionBase):
                 print(f"Temp: {GPU.temperature}")
 
     def on_key_down(self) -> None:
-        print("Key down") 
+        print("Key down")
 
     def on_key_up(self) -> None:
         print("Key up")
