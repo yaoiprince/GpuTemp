@@ -1,6 +1,7 @@
 # Import StreamController modules
 from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionBase import ActionHolder
 
 import subprocess
 
