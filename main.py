@@ -14,7 +14,7 @@ class PluginTemplate(PluginBase):
             plugin_base = self,
             action_base = Temp,
             action_id = "dev_yaoiprince_GpuTemp::temperature", # Change this to your own plugin id
-            action_name = "GpuTemp",
+            action_name = "GPU Temperature",
         )
         self.add_action_holder(self.TemperatureAction)
 
