@@ -7,7 +7,7 @@ from src.backend.PluginManager.PluginBase import PluginBase
 # Import python modules
 import subprocess
 from pynvml_utils import nvidia_smi
-﻿﻿﻿﻿
+
 # Import gtk modules - used for the config rows
 import gi
 gi.require_version("Gtk", "4.0")
@@ -21,7 +21,7 @@ class TemperatureSensor:
     def get_temperature(self):
         # Run the nvidia-smi command to get the GPU temperature
         result = subprocess.run(['nvidia-smi', '--query=GPU_TEMPERATURE'], capture_output=True, text=True)
-        
+
         # Parse the output of the command and extract the temperat﻿ure value
         self._gpu_temp = re.search(r"(\d+\.\d+)", result.stdout).group()
 
@@ -32,7 +32,7 @@ class Temp(ActionBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.gpu_temp_sensor = TemperatureSensor()
-        
+
         # Configure logging
         import logging
         logging.basicConfig(filename='app.log', level=logging.DEBUG)
