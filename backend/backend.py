@@ -4,7 +4,7 @@ import subprocess
 class Backend(BackendBase):
     def __init__(self):
         super().__init__()
-        
+
         nvsmi = nvidia_smi.getInstance()
         nvidia_smi.nvmlInit()
         handle = nvidia_smi.nvmlDeviceGetHandleByIndex(0)
@@ -29,3 +29,5 @@ if __name__ == "__main__":
     gpu_temp_sensor.get_temperature()
 
     print(f"GPU Temperature: {gpu_temp_sensor.get_temperature_value()}°C")
+
+backend = Backend()
