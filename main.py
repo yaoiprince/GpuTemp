@@ -4,7 +4,7 @@ from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionBase import ActionHolder
 
 # Import actions
-from .actions.SimpleAction.temperature import Temp
+from .actions.SimpleAction.temperature import temp
 
 class PluginTemplate(PluginBase):
     def __init__(self):
@@ -13,7 +13,7 @@ class PluginTemplate(PluginBase):
         ## Register actions
         self.temperature = ActionHolder(
             plugin_base = self,
-            action_base = Temp,
+            action_base = temp,
             action_id = "dev_yaoiprince_GpuTemp::temperature", # Change this to your own plugin id
             action_name = "GpuTemp",
         )
