@@ -2,7 +2,12 @@
 from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
+
 import subprocess
+import nvidia-smi
+
+nvidia_smi.nvmlInit()
+handle = nvidia_smi.nvmlDeviceGetHandleByIndex(0)
 
 # Import gtk modules - used for the config rows
 import gi
@@ -45,6 +50,6 @@ class temp(ActionBase):
         print("Key up")
 
 # Example usage
-if __name__ == "main":
+if __name__ == "__main__":
     plugin = Temp()
     plugin.on_ready()  # This will output the current GPU temperature
