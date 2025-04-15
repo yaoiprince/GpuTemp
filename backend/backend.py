@@ -1,6 +1,6 @@
 from streamcontroller_plugin_tools import BackendBase
+from pynvml_utils import nvidia_smi
 import subprocess
-import nvidia-smi
 
 class Backend(BackendBase):
     def __init__(self):
