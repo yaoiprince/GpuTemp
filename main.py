@@ -10,13 +10,13 @@ class PluginTemplate(PluginBase):
         super().__init__()
 
         ## Register actions
-        self.TemperatureAction = ActionHolder(
+        self.Temp = ActionHolder(
             plugin_base = self,
             action_base = Temp,
             action_id = "dev_yaoiprince_GpuTemp::temperature", # Change this to your own plugin id
-            action_name = "GPU Temperature",
+            action_name = "GpuTemp",
         )
-        self.add_action_holder(self.TemperatureAction)
+        self.add_action_holder(self.Temp)
 
         # Register plugin
         self.register(
