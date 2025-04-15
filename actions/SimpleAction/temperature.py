@@ -4,7 +4,7 @@ from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
 
 import subprocess
-import pynvml
+import nvidia_smi
 
 # Import gtk modules - used for the config rows
 import gi
