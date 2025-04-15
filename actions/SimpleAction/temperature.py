@@ -32,6 +32,10 @@ class Temp(ActionBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.gpu_temp_sensor = TemperatureSensor()
+        
+        # Configure logging
+        import logging
+        logging.basicConfig(filename='app.log', level=logging.DEBUG)
 
     def on_ready(self) -> None:
         print(f"{self.gpu_temp_sensor.get_temperature_value()}°C")
