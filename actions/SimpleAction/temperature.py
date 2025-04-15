@@ -1,7 +1,7 @@
 # Import StreamController modules
 from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.PluginManager.PluginBase import PluginBase
-
+from nvidia_ml_py3 import NVIDIAManagementLibrary
 import subprocess
 
 # Import gtk modules - used for the config rows
