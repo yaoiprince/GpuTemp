@@ -1,6 +1,7 @@
 # Import StreamController modules
 from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.PluginManager.PluginBase import PluginBase
+from src.backend.PluginManager.ActionHolder import ActionHolder
 from nvidia_ml_py3 import NVIDIAManagementLibrary
 import subprocess
 
