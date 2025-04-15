@@ -4,10 +4,7 @@ from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
 
 import subprocess
-import nvidia-smi
-
-nvidia_smi.nvmlInit()
-handle = nvidia_smi.nvmlDeviceGetHandleByIndex(0)
+import pynvml
 
 # Import gtk modules - used for the config rows
 import gi
