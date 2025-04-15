@@ -21,7 +21,7 @@ class TemperatureSensor:
         gpu_temp = float(re.search(r"(\d+\.\d+)", result.stdout).group())
         return gpu_temp
 
-class Temp(ActionBase):
+class temp(ActionBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.gpu_temp_sensor = TemperatureSensor()
