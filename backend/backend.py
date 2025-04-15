@@ -1,5 +1,6 @@
 from streamcontroller_plugin_tools import BackendBase
 import subprocess
+import pynvml
 
 class Backend(BackendBase):
     def __init__(self):
