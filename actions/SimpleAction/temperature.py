@@ -1,7 +1,6 @@
 # Import StreamController modules
 from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.PluginManager.PluginBase import PluginBase
-from src.backend.PluginManager.ActionBase import ActionHolder
 
 import subprocess
 
@@ -14,7 +13,7 @@ from gi.repository import Gtk, Adw
 class TemperatureSensor:
     def get_temperature_value(self):
         # Execute nvidia-smi to fetch GPU temperature
-        result = subprocess.run(['nvidia-smi', '--query=GPU_TEMPERATURE'], capture_output=True, text=True)
+        result = subprocess.run(['nvidia-smi', '-q -d TEMPERATURE'], capture_output=True, text=True)
 
         if result.returncode != 0:
             raise Exception(f"Failed to execute nvidia-smi: {result.stderr}")
