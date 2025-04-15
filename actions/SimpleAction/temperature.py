@@ -1,12 +1,7 @@
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.DeckManagement.DeckController import DeckController
-from src.backend.PageManagement.Page import Page
-from src.backend.PluginManager.PluginBase import PluginBase
+from streamcontroller import ActionBase
 
-# Import python modules
 import subprocess
-from pynvml_utils import nvidia_smi
 
 # Import gtk modules - used for the config rows
 import gi
@@ -15,18 +10,15 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw
 
 class TemperatureSensor:
-    def __init__(self):
-        self._gpu_temp = None
-
-    def get_temperature(self):
-        # Run the nvidia-smi command to get the GPU temperature
+    def get_temperature_value(self):
+        # Execute nvidia-smi to fetch GPU temperature
         result = subprocess.run(['nvidia-smi', '--query=GPU_TEMPERATURE'], capture_output=True, text=True)
 
-        # Parse the output of the command and extract the temperat﻿ure value
-        self._gpu_temp = re.search(r"(\d+\.\d+)", result.stdout).group()
+        if result.returncode != 0:
+            raise Exception(f"Failed to execute nvidia-smi: {result.stderr}")
 
-    def get_temperature_value(self):
-        return float(self._gpu_temp)
+        gpu_temp = float(re.search(r"(\d+\.\d+)", result.stdout).group())
+        return gpu_temp
 
 class Temp(ActionBase):
     def __init__(self, *args, **kwargs):
@@ -38,10 +30,24 @@ class Temp(ActionBase):
         logging.basicConfig(filename='app.log', level=logging.DEBUG)
 
     def on_ready(self) -> None:
-        print(f"{self.gpu_temp_sensor.get_temperature_value()}°C")
+        try:
+            gpu_temp = self.gpu_temp_sensor.get_temperature_value()
+            print(f"{gpu_temp}°C")
+        except Exception as e:
+            print(e)
 
     def on_key_down(self) -> None:
-        print("Key down")
+        try:
+            gpu_temp = self.gpu_temp_sensor.get_temperature_value()
+            print(f"GPU Temperature: {gpu_temp}°C")
+            # You can also display this temperature in the StreamController UI if available
+        except Exception as e:
+            print(e)
 
     def on_key_up(self) -> None:
         print("Key up")
+
+# Example usage
+if __name__ == "__main__":
+    plugin = Temp()
+    plugin.on_ready()  # This will output the current GPU temperature
