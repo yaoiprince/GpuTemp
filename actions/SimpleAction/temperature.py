@@ -26,10 +26,6 @@ class temp(ActionBase):
         super().__init__(*args, **kwargs)
         self.gpu_temp_sensor = TemperatureSensor()
 
-        # Configure logging
-        import logging
-        logging.basicConfig(filename='app.log', level=logging.DEBUG)
-
     def on_ready(self) -> None:
         try:
             gpu_temp = self.gpu_temp_sensor.get_temperature_value()
@@ -49,6 +45,6 @@ class temp(ActionBase):
         print("Key up")
 
 # Example usage
-if __name__ == "__main__":
+if __name__ == "main":
     plugin = Temp()
     plugin.on_ready()  # This will output the current GPU temperature
