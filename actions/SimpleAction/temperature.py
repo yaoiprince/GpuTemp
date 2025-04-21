@@ -3,8 +3,7 @@ from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
 
-from nvidia_ml_py import nvidia_smi
-import pynvml
+import nvidia_smi
 import subprocess
 
 # Import gtk modules - used for the config rows
