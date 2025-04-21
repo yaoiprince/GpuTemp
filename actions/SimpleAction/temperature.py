@@ -3,8 +3,8 @@ from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
 
-import pynvml
 from nvidia_ml_py import nvidia_smi
+import pynvml
 import subprocess
 
 # Import gtk modules - used for the config rows
@@ -12,20 +12,6 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw
-
-nvidia_smi.nvmlInit()
-handle = nvidia_smi.nvmlDeviceGetHandleByIndex(0)
-
-class TemperatureSensor:
-    def get_temperature_value(self):
-        # Execute nvidia-smi to fetch GPU temperature
-        result = subprocess.run(['nvidia-smi', '-q -d temperature'], capture_output=True, text=True)
-
-        if result.returncode != 0:
-            raise Exception(f"nvsmi failed: {result.stderr}")
-
-        gpu_temp = float(re.search(r"(\d+\.\d+)", result.stdout).group())
-        return gpu_temp
 
 class temp(ActionBase):
     def __init__(self, *args, **kwargs):
