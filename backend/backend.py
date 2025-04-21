@@ -19,7 +19,7 @@ class TemperatureSensor:
         result = subprocess.run(['nvidia-smi', '-q -d TEMPERATURE'], capture_output=True, text=True)
 
         # Parse the output of the command and extract the temperat﻿ure value
-        self._gpu_temp = re.search(r"(\d+\.\d+)", result.stdout).group()
+        self.gpu_temp = re.search(r"(\d+\.\d+)", result.stdout).group()
 
     def get_temperature_value(self):
         return float(self._gpu_temp)
@@ -29,6 +29,6 @@ if __name__ == "__main__":
     gpu_temp_sensor = TemperatureSensor()
     gpu_temp_sensor.get_temperature()
 
-    print(f"GPU Temperature: {gpu_temp_sensor.get_temperature_value()}°C")
+    print(f"GPU Temp: {gpu_temp_sensor.get_temperature_value()}°C")
 
 backend = Backend()
