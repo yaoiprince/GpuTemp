@@ -16,7 +16,6 @@ from gi.repository import Gtk, Adw
 class temp(ActionBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.gpu_temp_sensor = TemperatureSensor()
 
     def on_ready(self) -> None:
         try:
@@ -25,11 +24,7 @@ class temp(ActionBase):
             print(e)
 
     def on_key_down(self) -> None:
-        try:
-            print(f"GPU Temperature: {gpu_temp}°C")
-            # You can also display this temperature in the StreamController UI if available
-        except Exception as e:
-            print(e)
+        print("Key down")
 
     def on_key_up(self) -> None:
         print("Key up")
