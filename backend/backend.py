@@ -26,7 +26,7 @@ class TemperatureSensor:
     def get_temperature_value(self):
         return float(self._gpu_temp)
 
-    if __name__ == "__main__":
+    if __name__ == "main":
 	# Create an instance of the GPU Temperature class to get your GPU temperature
 	gpu_temp_sensor = TemperatureSensor()
 	gpu_temp_sensor.get_temperature()
