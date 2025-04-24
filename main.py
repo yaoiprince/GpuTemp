@@ -7,7 +7,7 @@ from streamcontroller_plugin_tools import BackendBase
 # Import actions
 from .actions.SimpleAction.temperature import GpuTemp
 
-class PluginTemplate(PluginBase):
+class temperature(PluginBase):
     def __init__(self):
         super().__init__()
 
