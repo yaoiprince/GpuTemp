@@ -1,5 +1,5 @@
 # Import StreamController modules
-from src.backend.PluginManager.ActionBase import ActionBase
+from src.backend.PluginManager.ActionCore import ActionCore
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
 from src.backend.DeckManagement.DeckController import DeckController
