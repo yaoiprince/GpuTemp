@@ -14,7 +14,7 @@ class Backend(BackendBase):
 
 class TemperatureSensor:
     def __init__(self):
-        self._gpu_temp = None
+	nvmlInit()
 
     def get_temperature(self):
         # Run the nvidia-smi command to get the GPU temperature
