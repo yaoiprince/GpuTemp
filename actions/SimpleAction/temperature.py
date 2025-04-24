@@ -2,6 +2,9 @@
 from src.backend.PluginManager.ActionCore import ActionCore
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
+from src.backend.DeckManagement.DeckController import DeckController
+from src.backend.PageManagement.Page import Page
+from streamcontroller_plugin_tools import BackendBase
 from pynvml import *
 
 import nvidia_smi
@@ -29,8 +32,3 @@ class GpuTemp(ActionBase):
 
     def on_key_up(self) -> None:
         print("Key up")
-
-# Example usage
-if __name__ == "__main__":
-    plugin = Temp()
-    plugin.on_ready()  # This will output the current GPU temperature
