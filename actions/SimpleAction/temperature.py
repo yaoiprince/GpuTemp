@@ -2,7 +2,7 @@
 from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
-
+from pynvml import *
 import nvidia_smi
 import subprocess
 
