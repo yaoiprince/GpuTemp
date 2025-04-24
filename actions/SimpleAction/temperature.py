@@ -3,6 +3,7 @@ from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
 from pynvml import *
+
 import nvidia_smi
 import subprocess
 
@@ -12,15 +13,17 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw
 
-class temp(ActionBase):
+class GpuTemp(ActionBase):
     def __init__(self, *args, **kwargs):
+    	nvmlInit()
         super().__init__(*args, **kwargs)
 
     def on_ready(self) -> None:
         try:
+        nvmlDeviceGetCount()
+        except NVMLError as error:
+	print(error)
             print(f"{gpu_temp}°C")
-        except Exception as e:
-            print(e)
 
     def on_key_down(self) -> None:
         print("Key down")
