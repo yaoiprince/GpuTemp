@@ -15,7 +15,6 @@ from gi.repository import Gtk, Adw
 
 class GpuTemp(ActionBase):
     def __init__(self, *args, **kwargs):
-    	nvmlInit()
         super().__init__(*args, **kwargs)
 
     def on_ready(self) -> None:
