@@ -2,6 +2,7 @@
 from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
+from streamcontroller_plugin_tools import BackendBase
 
 # Import actions
 from .actions.SimpleAction.temperature import GpuTemp
