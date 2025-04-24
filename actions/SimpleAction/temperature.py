@@ -31,6 +31,6 @@ class GpuTemp(ActionBase):
         print("Key up")
 
 # Example usage
-if __name__ == "main":
+if __name__ == "__main__":
     plugin = Temp()
     plugin.on_ready()  # This will output the current GPU temperature
