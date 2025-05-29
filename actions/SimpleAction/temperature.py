@@ -22,7 +22,7 @@ class GpuTemp(ActionBase):
 
     def on_ready(self) -> None:
         try:
-        nvmlDeviceGetCount()
+	    nvmlDeviceGetCount()
         except NVMLError as error:
 	print(error)
             print(f"{gpu_temp}°C")
