@@ -1,3 +1,5 @@
+# **Broken!**
+
 # PluginTemplate
 
 A simple plugin you can use as a starting point for your amazing creations!
